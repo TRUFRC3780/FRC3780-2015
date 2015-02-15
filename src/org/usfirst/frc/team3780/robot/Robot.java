@@ -29,6 +29,7 @@ public class Robot extends IterativeRobot {
 	// initialize subsystems
 	public static final Chassis chassis = new Chassis();
 	public static final Arms arms = new Arms();
+	public static final Winch winch = new Winch();
 	
 	// initialize OI
 	public static OI oi;

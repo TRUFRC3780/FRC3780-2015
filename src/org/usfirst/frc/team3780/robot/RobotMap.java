@@ -44,6 +44,8 @@ public interface RobotMap {
 	// WINCH
 	
 	int winch_channel = 7;
+	double winch_up_speed = 0.5;
+	double winch_down_speed = -0.5;
 	
 	// JOYSTICKS
 	
@@ -53,6 +55,8 @@ public interface RobotMap {
 	
 	// BUTTONS
 	
-	int button_arms_operate = 1;
+	int button_arms_operate = 1; // trigger
+	int button_winch_up = 3; // top button
+	int button_winch_down = 2; // bottom button
 	
 }

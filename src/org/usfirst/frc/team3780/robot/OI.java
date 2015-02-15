@@ -18,7 +18,6 @@ package org.usfirst.frc.team3780.robot;
 import java.util.ArrayList;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team3780.robot.commands.*;
@@ -29,7 +28,7 @@ import org.usfirst.frc.team3780.robot.commands.*;
 public class OI {
 	
 	Joystick joystickTankLeft, joystickTankRight, joystickOperator;
-	JoystickButton buttonArmsOperate;
+	JoystickButton buttonArmsOperate, buttonWinchUp, buttonWinchDown;
 	
 	public OI() {
 		
@@ -43,6 +42,13 @@ public class OI {
 		// operate arms
 		buttonArmsOperate = new JoystickButton(joystickOperator, RobotMap.button_arms_operate);
 		buttonArmsOperate.whileHeld(new ArmsOperate());
+		
+		// operate winch
+		buttonWinchUp = new JoystickButton(joystickOperator, RobotMap.button_winch_up);
+		buttonWinchUp.whileHeld(new WinchUp());
+		
+		buttonWinchDown = new JoystickButton(joystickOperator, RobotMap.button_winch_down);
+		buttonWinchDown.whileHeld(new WinchDown());
 		
 	}
 	
