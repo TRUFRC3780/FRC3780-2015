@@ -16,33 +16,34 @@
 package org.usfirst.frc.team3780.robot.commands;
 
 import org.usfirst.frc.team3780.robot.Robot;
+import org.usfirst.frc.team3780.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * Drives the robot using two joysticks.
+ * Engages the arms by shifting the gearboxes to low gear.
  */
-public class DriveRobot extends Command {
+public class ArmsEngage extends Command {
 
-	/**
-	 * Requires the chassis subsystem.
-	 */
-    public DriveRobot() {
-    	requires(Robot.chassis);
+    public ArmsEngage() {
+        requires(Robot.arms);
     }
 
     protected void initialize() {
     }
 
     /**
-     * Passes tankJoys from the OI to the tankDrive method in the subsystem.
+     * Shift the gearboxes to low gear state.
      */
     protected void execute() {
-    	Robot.chassis.tankDrive(Robot.oi.getTankJoys().get(0), Robot.oi.getTankJoys().get(1));
+    	Robot.arms.shift(RobotMap.arms_shifters_low_direction);
     }
 
+    /**
+     * Command is finished when solenoid state matches low gear state.
+     */
     protected boolean isFinished() {
-        return false;
+        return Robot.arms.getState() == RobotMap.arms_shifters_low_direction;
     }
 
     protected void end() {
@@ -50,5 +51,4 @@ public class DriveRobot extends Command {
 
     protected void interrupted() {
     }
-    
 }

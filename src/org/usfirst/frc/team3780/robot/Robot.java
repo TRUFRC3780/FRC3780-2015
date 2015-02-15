@@ -26,11 +26,15 @@ import org.usfirst.frc.team3780.robot.subsystems.*;
  */
 public class Robot extends IterativeRobot {
 
+	// initialize subsystems
 	public static final Chassis chassis = new Chassis();
+	public static final Arms arms = new Arms();
+	
+	// initialize OI
 	public static OI oi;
-
+	
 	// TODO: write autonomous
-    // Command autonomousCommand;
+	// Command autonomousCommand;
 
     public void robotInit() {
 		oi = new OI();

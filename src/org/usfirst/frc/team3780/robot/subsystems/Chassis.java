@@ -16,25 +16,25 @@
 package org.usfirst.frc.team3780.robot.subsystems;
 
 import org.usfirst.frc.team3780.robot.RobotMap;
-import org.usfirst.frc.team3780.robot.commands.DriveRobot;
+import org.usfirst.frc.team3780.robot.commands.ChassisDrive;
 
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * This subsystem controls the four CIM tank drive.
+ * Controls the four CIM tank drive.
  */
 public class Chassis extends Subsystem {
     
 	RobotDrive drive;
-	Talon frontLeft, rearLeft, frontRight, rearRight;
+	Talon frontLeftDrive, rearLeftDrive, frontRightDrive, rearRightDrive;
 	
 	public Chassis() {
-		frontLeft = new Talon(RobotMap.chassis_front_left_drive_channel);
-		rearLeft = new Talon(RobotMap.chassis_rear_left_drive_channel);
-		frontRight = new Talon(RobotMap.chassis_front_right_drive_channel);
-		rearRight = new Talon(RobotMap.chassis_rear_right_drive_channel);
-		drive = new RobotDrive(frontLeft, rearLeft, frontRight, rearRight);
+		frontLeftDrive = new Talon(RobotMap.chassis_front_left_drive_channel);
+		rearLeftDrive = new Talon(RobotMap.chassis_rear_left_drive_channel);
+		frontRightDrive = new Talon(RobotMap.chassis_front_right_drive_channel);
+		rearRightDrive = new Talon(RobotMap.chassis_rear_right_drive_channel);
+		drive = new RobotDrive(frontLeftDrive, rearLeftDrive, frontRightDrive, rearRightDrive);
 	}
 	
 	/**
@@ -47,7 +47,7 @@ public class Chassis extends Subsystem {
 	}
 
     public void initDefaultCommand() {
-    	setDefaultCommand(new DriveRobot());
+    	setDefaultCommand(new ChassisDrive());
     }
 }
 

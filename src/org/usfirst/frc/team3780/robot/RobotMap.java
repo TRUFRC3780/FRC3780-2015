@@ -15,18 +15,44 @@
 
 package org.usfirst.frc.team3780.robot;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+
 /**
  * Maps ports and channels to variable names.
  */
 public interface RobotMap {
     
+	// CHASSIS
+	
 	int chassis_front_left_drive_channel = 1;
 	int chassis_front_right_drive_channel = 2;
 	int chassis_rear_left_drive_channel = 3;
 	int chassis_rear_right_drive_channel = 4;
 	
-	int tank_joy_left_port = 1;
-	int tank_joy_right_port = 2;
-	int op_joy_port = 3;
+	// ARMS
+	
+	int arms_left_arm_channel = 5;
+	int arms_right_arm_channel = 6;
+	double arms_left_arm_speed = 0.5;
+	double arms_right_arm_speed = 0.5;
+	
+	int arms_shifters_forward_channel = 1;
+	int arms_shifters_reverse_channel = 2;
+	DoubleSolenoid.Value arms_shifters_low_direction = DoubleSolenoid.Value.kForward;
+	DoubleSolenoid.Value arms_shifters_neutral_direction = DoubleSolenoid.Value.kReverse;
+	
+	// WINCH
+	
+	int winch_channel = 7;
+	
+	// JOYSTICKS
+	
+	int joystick_tank_left_port = 1;
+	int joystick_tank_right_port = 2;
+	int joystick_operator_port = 3;
+	
+	// BUTTONS
+	
+	int button_arms_operate = 1;
 	
 }

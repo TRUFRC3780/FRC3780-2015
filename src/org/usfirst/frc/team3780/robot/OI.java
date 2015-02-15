@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team3780.robot.commands.*;
 
@@ -27,16 +28,21 @@ import org.usfirst.frc.team3780.robot.commands.*;
  */
 public class OI {
 	
-	Joystick tankJoyLeft, tankJoyRight, opJoy;
+	Joystick joystickTankLeft, joystickTankRight, joystickOperator;
+	JoystickButton buttonArmsOperate;
 	
 	public OI() {
 		
 		// initialize drive joysticks
-		tankJoyLeft = new Joystick(RobotMap.tank_joy_left_port);
-		tankJoyRight = new Joystick(RobotMap.tank_joy_right_port);
+		joystickTankLeft = new Joystick(RobotMap.joystick_tank_left_port);
+		joystickTankRight = new Joystick(RobotMap.joystick_tank_right_port);
 		
 		// initialize operator joystick
-		opJoy = new Joystick(RobotMap.op_joy_port);
+		joystickOperator = new Joystick(RobotMap.joystick_operator_port);
+		
+		// operate arms
+		buttonArmsOperate = new JoystickButton(joystickOperator, RobotMap.button_arms_operate);
+		buttonArmsOperate.whileHeld(new ArmsOperate());
 		
 	}
 	
@@ -44,11 +50,11 @@ public class OI {
 	 * Returns the drive joysticks.
 	 * @return ArrayList of drive joysticks
 	 */
-	public ArrayList<Joystick> getTankJoys() {
-		ArrayList<Joystick> tankJoys = new ArrayList<Joystick>();
-		tankJoys.add(0, tankJoyLeft);
-		tankJoys.add(1, tankJoyRight);
-		return tankJoys;
+	public ArrayList<Joystick> getDriveJoysticks() {
+		ArrayList<Joystick> driveJoysticks = new ArrayList<Joystick>();
+		driveJoysticks.add(0, joystickTankLeft);
+		driveJoysticks.add(1, joystickTankRight);
+		return driveJoysticks;
 	}
 	
 }
