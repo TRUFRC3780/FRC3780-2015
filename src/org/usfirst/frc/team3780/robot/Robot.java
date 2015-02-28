@@ -15,17 +15,22 @@
 
 package org.usfirst.frc.team3780.robot;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
 import org.usfirst.frc.team3780.robot.subsystems.*;
 
 /**
  * Functions in this class are called according to mode.
  */
 public class Robot extends IterativeRobot {
-
+	
+	// initialize compressor
+	// try moving this later if it doesn't work
+	private Compressor compressor = new Compressor();
+	
 	// initialize subsystems
 	public static final Chassis chassis = new Chassis();
 	public static final Arms arms = new Arms();
@@ -38,7 +43,10 @@ public class Robot extends IterativeRobot {
 	// Command autonomousCommand;
 
     public void robotInit() {
-		oi = new OI();
+		
+        compressor.start();
+    	
+    	oi = new OI();
 		
         // run autonomous
         // autonomousCommand = new AutonomousCommand();
