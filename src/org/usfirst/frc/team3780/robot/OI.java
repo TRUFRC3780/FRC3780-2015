@@ -63,5 +63,9 @@ public class OI {
 		return driveJoysticks;
 	}
 	
+	public Joystick getDriveJoystick() {
+		return joystickTankLeft;
+	}
+	
 }
 

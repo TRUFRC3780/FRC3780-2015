@@ -24,15 +24,15 @@ public interface RobotMap {
     
 	// CHASSIS
 	
-	int chassis_front_left_drive_channel = 1;
-	int chassis_front_right_drive_channel = 2;
-	int chassis_rear_left_drive_channel = 3;
-	int chassis_rear_right_drive_channel = 4;
+	int chassis_front_left_drive_channel = 0;
+	int chassis_front_right_drive_channel = 1;
+	int chassis_rear_left_drive_channel = 2;
+	int chassis_rear_right_drive_channel = 3;
 	
 	// ARMS
 	
-	int arms_left_arm_channel = 5;
-	int arms_right_arm_channel = 6;
+	int arms_left_arm_channel = 4;
+	int arms_right_arm_channel = 5;
 	double arms_left_arm_speed = 0.5;
 	double arms_right_arm_speed = 0.5;
 	
@@ -43,15 +43,15 @@ public interface RobotMap {
 	
 	// WINCH
 	
-	int winch_channel = 7;
+	int winch_channel = 6;
 	double winch_up_speed = 0.5;
 	double winch_down_speed = -0.5;
 	
 	// JOYSTICKS
 	
-	int joystick_tank_left_port = 1;
-	int joystick_tank_right_port = 2;
-	int joystick_operator_port = 3;
+	int joystick_tank_left_port = 0;
+	int joystick_tank_right_port = 9;
+	int joystick_operator_port = 2;
 	
 	// BUTTONS
 	

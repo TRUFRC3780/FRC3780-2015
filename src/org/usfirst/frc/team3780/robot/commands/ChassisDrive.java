@@ -38,7 +38,8 @@ public class ChassisDrive extends Command {
      * Passes driveJoysticks from the OI to the tankDrive method in the subsystem.
      */
     protected void execute() {
-    	Robot.chassis.tankDrive(Robot.oi.getDriveJoysticks().get(0), Robot.oi.getDriveJoysticks().get(1));
+    	// Robot.chassis.tankDrive(Robot.oi.getDriveJoysticks().get(0), Robot.oi.getDriveJoysticks().get(1));
+    	Robot.chassis.arcadeDrive(Robot.oi.getDriveJoystick());
     }
 
     protected boolean isFinished() {

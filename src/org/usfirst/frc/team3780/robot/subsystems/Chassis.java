@@ -35,6 +35,10 @@ public class Chassis extends Subsystem {
 		frontRightDrive = new Talon(RobotMap.chassis_front_right_drive_channel);
 		rearRightDrive = new Talon(RobotMap.chassis_rear_right_drive_channel);
 		drive = new RobotDrive(frontLeftDrive, rearLeftDrive, frontRightDrive, rearRightDrive);
+		drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+		drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+		drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+		drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
 	}
 	
 	/**
@@ -44,6 +48,10 @@ public class Chassis extends Subsystem {
 	 */
 	public void tankDrive(Joystick jLeft, Joystick jRight) {
 		drive.tankDrive(jLeft, jRight);
+	}
+	
+	public void arcadeDrive(Joystick j) {
+		drive.arcadeDrive(j);
 	}
 
     public void initDefaultCommand() {
