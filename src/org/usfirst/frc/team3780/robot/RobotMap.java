@@ -58,5 +58,17 @@ public interface RobotMap {
 	int button_arms_operate = 1; // trigger
 	int button_winch_up = 3; // top button
 	int button_winch_down = 2; // bottom button
+	int button_auto = 6;
 	
+	// AUTONOMOUS
+	
+	// drive forward
+	double autonomous_drive_forward_time = 3.0;
+	double autonomous_drive_forward_speed = 0.4;
+	
+	
+	// dance!
+	int autonomous_dance_iterations = 16;
+	double autonomous_dance_speed = 0.6;
+	double autonomous_dance_interval = 0.6;
 }

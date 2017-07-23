@@ -50,8 +50,26 @@ public class Chassis extends Subsystem {
 		drive.tankDrive(jLeft, jRight);
 	}
 	
+	// @param speedL the left drive speed
+	// @param speedR the right drive speed
+	public void setDrive(double speedL,double speedR) {
+		drive.setLeftRightMotorOutputs(-speedL,-speedR);
+	}
+	
+	public void driveForward(double speed) {
+		setDrive(speed,speed);
+	}
+	
+	public void stopDrive() {
+		setDrive(0,0);
+	}
+	
 	public void arcadeDrive(Joystick j) {
-		drive.arcadeDrive(j);
+		drive.arcadeDrive(j,true);
+	}
+	
+	public void arcadeDrive(double X, double y) {
+		drive.arcadeDrive(X, y);
 	}
 
     public void initDefaultCommand() {

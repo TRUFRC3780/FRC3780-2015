@@ -28,7 +28,8 @@ import org.usfirst.frc.team3780.robot.commands.*;
 public class OI {
 	
 	Joystick joystickTankLeft, joystickTankRight, joystickOperator;
-	JoystickButton buttonArmsOperate, buttonWinchUp, buttonWinchDown;
+	JoystickButton buttonArmsOperate, buttonWinchUp, buttonWinchDown, buttonAuto;
+	
 	
 	public OI() {
 		
@@ -49,6 +50,9 @@ public class OI {
 		
 		buttonWinchDown = new JoystickButton(joystickOperator, RobotMap.button_winch_down);
 		buttonWinchDown.whileHeld(new WinchDown());
+		
+		buttonAuto = new JoystickButton(joystickTankLeft, RobotMap.button_auto);
+		buttonAuto.whenPressed(new Autonomous());
 		
 	}
 	

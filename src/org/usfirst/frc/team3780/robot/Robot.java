@@ -15,6 +15,10 @@
 
 package org.usfirst.frc.team3780.robot;
 
+import org.usfirst.frc.team3780.robot.commands.*;
+
+import edu.wpi.first.wpilibj.command.*;
+
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -40,7 +44,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	
 	// TODO: write autonomous
-	// Command autonomousCommand;
+	Command autonomousCommand;
 
     public void robotInit() {
 		
@@ -49,7 +53,7 @@ public class Robot extends IterativeRobot {
     	oi = new OI();
 		
         // run autonomous
-        // autonomousCommand = new AutonomousCommand();
+        autonomousCommand = new Autonomous();
 		
     }
 	
@@ -59,7 +63,7 @@ public class Robot extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        // if (autonomousCommand != null) autonomousCommand.start();
+        if (autonomousCommand != null) autonomousCommand.start();
     }
 
     public void autonomousPeriodic() {
